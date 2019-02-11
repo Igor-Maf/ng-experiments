@@ -30,7 +30,10 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "lazyModules": [
+              "src/app/widget-settings/widget-settings.module"
+            ]
           },
           "configurations": {
             "production": {

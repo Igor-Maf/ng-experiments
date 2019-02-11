@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactoryLoader, SystemJsNgModuleLoader } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,11 +7,13 @@ import { MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, Mat
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { LoadModuleDirective } from './load-module.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    LoadModuleDirective
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,9 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     MatButtonModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

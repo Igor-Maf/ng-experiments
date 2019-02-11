@@ -21,5 +21,9 @@
 <app-reactive-form></app-reactive-form>
 
 <button type="button" (click)="loadModule()">Load</button>
-<ng-container appLoadModule="widgetSettings" *ngIf="isLoaded"></ng-container>
+
+<ng-container *ngIf="isLoaded">
+  <ng-container appLoadModule="widgetSettings"></ng-container>
+</ng-container>
+
 <router-outlet></router-outlet>

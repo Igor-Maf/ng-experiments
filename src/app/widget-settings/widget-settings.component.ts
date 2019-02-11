@@ -1,15 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-widget-settings',
-  templateUrl: './widget-settings.component.html',
-  styleUrls: ['./widget-settings.component.scss']
+  templateUrl: './widget-settings.component.html'
 })
-export class WidgetSettingsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class WidgetSettingsComponent {}
